@@ -19,6 +19,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.appniche.stockhawk.R;
@@ -52,6 +53,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
   private Context mContext;
   private Cursor mCursor;
   boolean isConnected;
+  private TextView emptyView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     isConnected = activeNetwork != null &&
         activeNetwork.isConnectedOrConnecting();
     setContentView(R.layout.activity_my_stocks);
+
+    emptyView = (TextView) findViewById(R.id.empty_view_textView);
     // The intent service is for executing immediate pulls from the Yahoo API
     // GCMTaskService can only schedule tasks, they cannot execute immediately
     mServiceIntent = new Intent(this, StockIntentService.class);
@@ -72,13 +76,16 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
       mServiceIntent.putExtra("tag", "init");
       if (isConnected){
         startService(mServiceIntent);
+          emptyView.setVisibility(View.GONE);
       } else{
         networkToast();
+          emptyView.setVisibility(View.VISIBLE);
       }
     }
     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
     getLoaderManager().initLoader(CURSOR_LOADER_ID, null, this);
+
 
     mCursorAdapter = new QuoteCursorAdapter(this, null);
     recyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(this,
@@ -216,11 +223,27 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
   public void onLoadFinished(Loader<Cursor> loader, Cursor data){
     mCursorAdapter.swapCursor(data);
     mCursor = data;
+    updateEmptyView();
   }
 
   @Override
   public void onLoaderReset(Loader<Cursor> loader){
     mCursorAdapter.swapCursor(null);
+  }
+
+  private void updateEmptyView(){
+
+      if (mCursorAdapter.getItemCount() == 0){
+          emptyView = (TextView) findViewById(R.id.empty_view_textView);
+          if (null != emptyView){
+              int message = R.string.empty_stock_list;
+
+              if (!Utils.isNetworkAvailable(getApplicationContext())){
+                  message = R.string.empty_stock_list_no_network;
+              }
+              emptyView.setText(message);
+          }
+      }
   }
 
 }

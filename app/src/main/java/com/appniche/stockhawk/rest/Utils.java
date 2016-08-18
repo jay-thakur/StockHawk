@@ -1,9 +1,18 @@
 package com.appniche.stockhawk.rest;
 
 import android.content.ContentProviderOperation;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.appniche.stockhawk.R;
 import com.appniche.stockhawk.data.QuoteColumns;
 import com.appniche.stockhawk.data.QuoteProvider;
+import com.appniche.stockhawk.service.StockTaskService;
+
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -91,5 +100,38 @@ public class Utils {
       e.printStackTrace();
     }
     return builder.build();
+  }
+
+    /**
+     * Sets the stock status into shared preference.  This function should not be called from
+     * the UI thread because it uses commit to write to the shared preferences.
+     *
+     * @param c           Context to get the PreferenceManager from.
+     * @param stockStatus The IntDef value to set
+     */
+   /* static public void setStockStatus(Context c, @StockTaskService.StockStatus int stockStatus) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(c);
+        sp.edit().putInt(c.getString(R.string.pref_stock_status_key), stockStatus).commit();
+    }
+
+    @SuppressWarnings("ResourceType")
+    public static
+    @StockTaskService.StockStatus
+    int getStockStatus(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        return sp.getInt(context.getString(R.string.pref_stock_status_key), StockTaskService.STOCK_STATUS_UNKNOWN);
+    }*/
+
+
+  /**
+  * Return true if the network is available or about to become available
+  * @param context Context used to get the connectivity manager
+   * @return
+   */
+
+  public static boolean isNetworkAvailable(Context context){
+      ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+      NetworkInfo activeNetwork =connectivityManager.getActiveNetworkInfo();
+      return (activeNetwork != null && activeNetwork.isConnectedOrConnecting());
   }
 }
