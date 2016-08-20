@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <GridLayout
+        android:id="@+id/stock_symbol_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2" >
+
+        <TextView
+            android:text="Stock Symbol         "
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/stock_symbol"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="GOOG" />
+
+        <TextView
+            android:text="Stock Name"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/stock_name"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="Alphabet Inc." />
+
+        <TextView
+            android:text="First Trade"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/first_trade"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="21/08/2015" />
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Last Trade"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/last_trade"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="20/08/2016" />
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Currency"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="USD" />
+
+        <TextView
+            android:text="Bid Price"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/bid_price"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="646.83" />
+
+    </GridLayout>
+
+</RelativeLayout>

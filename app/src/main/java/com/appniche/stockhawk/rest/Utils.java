@@ -134,4 +134,14 @@ public class Utils {
       NetworkInfo activeNetwork =connectivityManager.getActiveNetworkInfo();
       return (activeNetwork != null && activeNetwork.isConnectedOrConnecting());
   }
+
+  public static String convertDate(String inputDate) {
+    StringBuilder outputFormattedDate = new StringBuilder();
+    outputFormattedDate.append(inputDate.substring(6))
+            .append("/")
+            .append(inputDate.substring(4, 6))
+            .append("/")
+            .append(inputDate.substring(2, 4));
+    return outputFormattedDate.toString();
+  }
 }
