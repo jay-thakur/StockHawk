@@ -41,9 +41,22 @@
         <provider
             android:name=".data.generated.QuoteProvider"
             android:authorities="com.appniche.stockhawk.data.QuoteProvider"
-            android:exported="false" />
+            android:exported="true" />
 
-        <activity android:name=".ui.StockDetailActivity"></activity>
+        <activity android:name=".ui.StockDetailActivity" />
+        <receiver android:name=".widget.StockWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/stock_appwidget_info" />
+        </receiver>
+
+        <!--The service will send our stock data to our widget. It needs
+        android.permission.BIND_REMOTEVIEWS permission -->
+        <service
+            android:name=".widget.StockWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
 
 </manifest>
