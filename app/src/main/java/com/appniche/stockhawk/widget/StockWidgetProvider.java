@@ -3,26 +3,14 @@ package com.appniche.stockhawk.widget;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.TaskStackBuilder;
 import android.widget.RemoteViews;
-import android.widget.Toast;
-
 import com.appniche.stockhawk.R;
-import com.appniche.stockhawk.service.StockTaskService;
-import com.appniche.stockhawk.ui.MyStocksActivity;
 import com.appniche.stockhawk.ui.StockDetailActivity;
 
 public class StockWidgetProvider extends AppWidgetProvider {
-
-    /*private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-
-    }*/
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -41,17 +29,8 @@ public class StockWidgetProvider extends AppWidgetProvider {
             views.setPendingIntentTemplate(R.id.stock_list, clickPendingIntent);
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
-            //appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.stock_list);
-            //Toast.makeText(context, "widget added", Toast.LENGTH_LONG).show();
+
         }
     }
 
-    /*@Override
-    public void onReceive(Context context, Intent intent) {
-        super.onReceive(context, intent);
-
-        AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
-        int[] appwidgetIds = widgetManager.getAppWidgetIds(new ComponentName(context, getClass()));
-        widgetManager.notifyAppWidgetViewDataChanged(appwidgetIds, R.id.stock_list);
-    }*/
 }

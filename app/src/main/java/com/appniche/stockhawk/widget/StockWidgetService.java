@@ -1,6 +1,5 @@
 package com.appniche.stockhawk.widget;
 
-
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
