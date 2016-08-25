@@ -57,6 +57,7 @@
         <service
             android:name=".widget.StockWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
+
     </application>
 
 </manifest>
