@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.appniche.stockhawk.R;
 import com.google.android.gms.gcm.TaskParams;
 
 /**
@@ -38,7 +39,7 @@ public class StockIntentService extends IntentService {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getApplicationContext(), "Invalid Stock Symbol", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.invalid_stock, Toast.LENGTH_LONG).show();
             }
         });
 

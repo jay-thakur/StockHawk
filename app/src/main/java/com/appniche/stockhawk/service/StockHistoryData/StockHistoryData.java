@@ -68,7 +68,6 @@ public class StockHistoryData {
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                Log.d(LOG_TAG, "onpost execute ");
                 if (status){
                     stockHistoryCallback.onSuccess(stockHistoryModel);
                 }else{

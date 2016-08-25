@@ -101,10 +101,10 @@ public class StockDetailActivity extends AppCompatActivity implements StockHisto
 
         // set data
         lineChart.setData(data);
-        lineChart.setDescription("1 Year Stock History");
+        lineChart.setDescription(getString(R.string.chart_description));
 
-        lineChart.setNoDataText("Fetching Data...");
-        lineChart.setContentDescription("Line Chart showing historical data for "+symbol);
+        lineChart.setNoDataText(getString(R.string.chart_fetching));
+        lineChart.setContentDescription(getString(R.string.chart_content_description) +symbol);
 
         callInvalidate();
 
@@ -136,6 +136,6 @@ public class StockDetailActivity extends AppCompatActivity implements StockHisto
     @Override
     public void onFailure() {
         emptyView.setVisibility(View.VISIBLE);
-        Toast.makeText(this,"Can't show data, there is some problem", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.failure_message, Toast.LENGTH_LONG).show();
     }
 }

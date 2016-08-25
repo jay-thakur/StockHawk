@@ -7,7 +7,7 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_graph"
         android:layout_width="match_parent"
-        android:contentDescription="price graph over time"
+        android:contentDescription="@string/content_description"
         android:layout_height="350dp">
     </com.github.mikephil.charting.charts.LineChart>
 
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="No Data to show"
+        android:text="@string/empty_graph"
         android:visibility="gone"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 

@@ -13,68 +13,80 @@
         android:columnCount="2" >
 
         <TextView
-            android:text="Stock Symbol         "
+            android:text="@string/stock_symbol"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/stock_symbol"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="GOOG" />
 
         <TextView
-            android:text="Stock Name"
+            android:text="@string/stock_name"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/stock_name"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="Alphabet Inc." />
 
         <TextView
-            android:text="First Trade"
+            android:text="@string/first_trade"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/first_trade"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="21/08/2015" />
 
         <TextView
             android:layout_weight="1"
-            android:text="Last Trade"
+            android:text="@string/last_trade"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/last_trade"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="20/08/2016" />
 
         <TextView
             android:layout_weight="1"
-            android:text="Currency"
+            android:text="@string/currency"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/currency"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="USD" />
 
         <TextView
-            android:text="Bid Price"
+            android:text="@string/bid_price"
             android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
         <TextView
             android:id="@+id/bid_price"
             android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="646.83" />
 
