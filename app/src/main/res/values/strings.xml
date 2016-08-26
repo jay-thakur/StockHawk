@@ -14,7 +14,7 @@
     <!--empty stock list -->
     <string name="empty_stock_list">No Stock Information Available</string>
     <string name="empty_stock_list_no_network">No stock information available. The network is not available to fetch stock data.</string>
-
+    <string name="stock_already_saved">This stock is already saved!</string>
     <string name="empty_graph">No Data to show</string>
     <string name="content_description">price graph over time</string>
     <string name="stock_symbol">Stock Symbol</string>
@@ -24,7 +24,7 @@
     <string name="currency">Currency</string>
     <string name="bid_price">Bid Price</string>
     <string name="invalid_stock">Invalid Stock Symbol</string>
-
+    <string name="fab_description">Add New Stock</string>
     <string name="chart_description">1 Year Stock History</string>
     <string name="chart_fetching">Fetching Data...</string>
     <string name="chart_content_description">Line Chart showing historical data for</string>
